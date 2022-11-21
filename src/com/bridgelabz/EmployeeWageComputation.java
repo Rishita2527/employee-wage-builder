@@ -1,8 +1,6 @@
 package com.bridgelabz;
-
-import java.util.Scanner;
-
 public class EmployeeWageComputation {
+	//Check Employee is Present or Absent - Use ((RANDOM)) for Attendance Check
 	void checkEmployeeAttendence() {
  	   int IS_FULL_TIME = 1;
  	   double empCheck = Math.floor(Math.random() * 10)%2;
@@ -11,6 +9,8 @@ public class EmployeeWageComputation {
  	   else
  		   System.out.println("Employee is Absent");
     }
+	
+	//Calculate Daily Employee Wage - Assume Wage per Hour is 20 - Assume Full Day Hour is 8
 	void calculateEmployeeWage(){
 		 int fullTime=1;
 		 int employeeRatePerHrs=20;
@@ -22,12 +22,32 @@ public class EmployeeWageComputation {
 		 else
 			 employeeHrs=0;
 		 employeeWage=employeeHrs*employeeRatePerHrs;
-		 System.out.println("Employee Wage "+employeeWage);
+		 System.out.println("Employee Daily Wage "+employeeWage);
 	}
+	
+	//Add Part time Employee & Wage - Assume Part time Hour is 8
+	void calculateEmployeePartTimeWage() {
+		int fullTime=2;
+		int partTime=1;
+		int employeeWagePerHrs=20;
+		int employeeHrs=0;
+		int employeeWage=0;
+		double employeeCheck=Math.floor(Math.random()*10)%3;
+		if(employeeCheck == fullTime)
+			employeeHrs=16;
+		else if (employeeCheck == partTime)
+			employeeHrs=8;
+		else
+			employeeHrs=0;
+		employeeWage = employeeHrs * employeeWagePerHrs;
+		System.out.println("Employee Part Time Wage "+employeeWage);
+	}
+
 	public static void main(String[] args) {
 		EmployeeWageComputation  Emp = new EmployeeWageComputation ();
 		Emp.checkEmployeeAttendence();
 		Emp.calculateEmployeeWage();
+		Emp.calculateEmployeePartTimeWage();
 	}
 
 }
