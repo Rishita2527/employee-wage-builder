@@ -59,11 +59,34 @@ public class EmployeeWageComputation {
     	employeeWage = employeeHrs * employeeWagePerHrs;
     	return employeeWage;
     }
+    
+   //Calculating Wages for a Month - Assume 20 Working Day per Month
+  void employeeMonthlyWage() {
+  	int fullTime=2;
+  	int partTime=1;
+  	int employeeWagePerHrs = 20;
+  	int workingDaysPerMonth=20;
+  	int employeeWage=0;
+  	int employeeHrs=0;
+  	int monthlyWage=0;
+      double employeeCheck = Math.floor(Math.random()*10)%3;
+      if(employeeCheck == fullTime)
+      	employeeHrs = 16;
+      else if (employeeCheck == partTime)
+          employeeHrs=8;
+      else
+      	employeeHrs=0;
+      
+      employeeWage=employeeHrs *  employeeWagePerHrs;
+      monthlyWage=employeeWage * workingDaysPerMonth;
+      System.out.println("Employee Monthly Wage " + monthlyWage);
+  }
 	public static void main(String[] args) {
 		EmployeeWageComputation  Emp = new EmployeeWageComputation ();
 		//Emp.checkEmployeeAttendence();
 		//Emp.calculateEmployeeWage();
 		//Emp.calculateEmployeePartTimeWage();
-		System.out.println(Emp.switchcase());
+        //System.out.println(Emp.switchcase());
+		Emp.employeeMonthlyWage();
 	}
 }
