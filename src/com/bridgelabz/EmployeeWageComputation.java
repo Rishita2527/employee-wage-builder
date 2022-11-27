@@ -42,12 +42,28 @@ public class EmployeeWageComputation {
 		employeeWage = employeeHrs * employeeWagePerHrs;
 		System.out.println("Employee Part Time Wage "+employeeWage);
 	}
-
+	
+	//Solving using Switch Case Statement
+    int switchcase() {
+    	int employeeWagePerHrs=20;
+    	int employeeHrs=0;
+    	int employeeWage=0;
+    	int employeeCheck= (int) Math.floor(Math.random()*10)%3;
+    	switch (employeeCheck) {
+    	case 1:employeeHrs=8;
+    	break;
+    	case 2:employeeHrs=16;
+    	break;
+    	default:employeeHrs=0;
+    }
+    	employeeWage = employeeHrs * employeeWagePerHrs;
+    	return employeeWage;
+    }
 	public static void main(String[] args) {
 		EmployeeWageComputation  Emp = new EmployeeWageComputation ();
-		Emp.checkEmployeeAttendence();
-		Emp.calculateEmployeeWage();
-		Emp.calculateEmployeePartTimeWage();
+		//Emp.checkEmployeeAttendence();
+		//Emp.calculateEmployeeWage();
+		//Emp.calculateEmployeePartTimeWage();
+		System.out.println(Emp.switchcase());
 	}
-
 }
